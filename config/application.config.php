@@ -7,9 +7,9 @@
  */
 return array(
     'modules' => array(
+        'DoctrineModule',
+        'DoctrineMongoODMModule',
         'Clientes',
-    	//'DoctrineModule',
-    	//'DoctrineMongoODMModule',
     ),
     'module_listener_options' => array(
         'module_paths' => array(
