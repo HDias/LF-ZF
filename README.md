@@ -1,9 +1,9 @@
-Aplicação ZF2 + MongoDB
+Aplicação ZF2 + Doctrine + MongoDB 
 =======================
 
 Introduction
 ------------
-ZendFramework 2 + MongoDB
+ZendFramework 2 + Doctrine + MongoDB
 
 Installation
 ------------

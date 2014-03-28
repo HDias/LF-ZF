@@ -1,15 +1,19 @@
 <?php
 namespace Clientes\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
-
 use Application\Document\User;
 
-class ClientesController extends AbstractActionController
-{
-    public function indexAction()
-    {/*
+class ClientesController extends CrudController{
+	
+	public function __construct(){
+		$this->document = 'Clientes\Document\User';
+		//$this->service = 'Culto\Service\CultoService';
+		//$this->form = 'Culto\Form\CultoForm';
+		//$this->route = 'home';
+		//$this->controller = 'CultoController';		
+	}
+	/*
+    public function indexAction(){
     	$dm = $this->getServiceLocator()->get('doctrine.documentmanager.odm_default');
     	
     	$user = new User();
@@ -22,9 +26,9 @@ class ClientesController extends AbstractActionController
     	
     	$dm->flush();
     	
-    	print_r($user); exit;*/
+    	print_r($user); exit;
         return new ViewModel(
         		//array('teste' => $user)
         		);
-    }
+    }*/
 }
