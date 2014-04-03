@@ -1,15 +1,15 @@
 <?php
 namespace Clientes\Controller;
 
-use Application\Document\User;
+use Clientes\Document\User;
 
 class ClientesController extends CrudController{
 	
 	public function __construct(){
 		$this->document = 'Clientes\Document\User';
-		//$this->service = 'Culto\Service\CultoService';
-		//$this->form = 'Culto\Form\CultoForm';
-		//$this->route = 'home';
+		$this->service = 'doctrine.documentmanager.odm_default';
+		$this->form = 'Clientes\Form\ClientesForm';
+		$this->route = 'home';
 		//$this->controller = 'CultoController';		
 	}
 	/*

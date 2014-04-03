@@ -1,4 +1,13 @@
 <h1>Lista de BD Mongo</h1>
+
+<a 	class="btn btn-success" 
+	title="Novo" 
+	href="<?php echo $this->url('clientes',
+    							array(	'controller' => 'ClientesController',
+										'action'=>'add'
+    								)); ?>">
+    <span class="glyphicon glyphicon-plus"></span>
+ </a>
 <table class="table table-striped table-bordered table-hover">
 		<thead>
 		    <tr>

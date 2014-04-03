@@ -29,6 +29,20 @@ return array(
                     ),
                 ),
             ),
+        		'clientes' => array(
+        				'type'      => 'Segment',
+        				'options'   => array(
+        						'route'    => '/clientes[/:action][/:id]',
+        						'constraints' => array(
+        								'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+        								'id'     => '[0-9]+',
+        						),
+        						'defaults' => array(
+        								'controller' => 'ClientesController',
+        								'action'     => 'index',
+        						),
+        				),
+        		),
         		
             /*'application' => array(
                 'type'    => 'Literal',

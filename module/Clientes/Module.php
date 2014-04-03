@@ -1,7 +1,7 @@
 <?php
 namespace Clientes;
 
-use Clientes\Document\User as UserDocument;
+use Clientes\Service\ClientesService;
 
 class Module
 {
@@ -23,8 +23,8 @@ class Module
     public function getServiceConfig(){
     	return array(
     			'factories' => array(
-    					'Clientes\Document\User' => function($service){
-    						return new UserDocument($service->get('doctrine.documentmanager.odm_default'));
+    					'Clientes\Service\ClientesService' => function($service){
+    						return new ClientesService($service->get('doctrine.documentmanager.odm_default'));
     					},
     			),
     	);
