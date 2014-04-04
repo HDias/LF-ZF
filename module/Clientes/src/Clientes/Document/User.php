@@ -10,10 +10,16 @@ class User{
     private $id;
 
     /** @ODM\Field(type="string") */
-    private $firstName;
+    private $nome;
 
     /** @ODM\Field(type="string") */
-    private $lastName;
+    private $email;
+    
+    /** @ODM\Field(type="string") */
+    private $telefone;
+    
+    /** @ODM\Field(type="string") */
+    private $setor;
 
     /**
      * @return the $id
@@ -25,19 +31,35 @@ class User{
     }
 
     /**
-     * @return the $firstName
+     * @return the $nome
      */
-    public function getFirstName()
+    public function getNome()
     {
-        return $this->firstName;
+        return $this->nome;
     }
 
     /**
-     * @return the $lastName
+     * @return the $email
      */
-    public function getLastName()
+    public function getEmail()
     {
-        return $this->lastName;
+        return $this->email;
+    }
+    
+    /**
+     * @return the $telefone
+     */
+    public function getTelefone()
+    {
+    	return $this->telefone;
+    }
+    
+    /**
+     * @return the $setor
+     */
+    public function getSetor()
+    {
+    	return $this->setor;
     }
 
     /**
@@ -46,22 +68,43 @@ class User{
     public function setId($id)
     {
         $this->id = $id;
+        return $this;
     }
 
     /**
-     * @param field_type $firstName
+     * @param field_type $nome
      */
-    public function setFirstName($firstName)
+    public function setNome($nome)
     {
-        $this->firstName = $firstName;
+        $this->nome = $nome;
+        return $this;
     }
 
     /**
-     * @param field_type $lastName
+     * @param field_type $telefone
      */
-    public function setLastName($lastName)
+    public function setEmail($email)
     {
-        $this->lastName = $lastName;
+        $this->email = $email;
+        return $this;
+    }
+    
+    /**
+     * @param field_type $telefone
+     */
+    public function setTelefone($telefone)
+    {
+    	$this->telefone = $telefone;
+    	return $this;
+    }
+    
+    /**
+     * @param field_type $setor
+     */
+    public function setSetor($setor)
+    {
+    	$this->setor = $setor;
+    	return $this;
     }
 
 }

@@ -10,7 +10,8 @@ abstract class CrudController extends AbstractActionController{
 
 	protected $dm;
 	protected $document;
-	protected $route;
+	protected $routeHome;
+	protected $routeThanks;
 	protected $controller;
 	protected $service;
 	
@@ -22,6 +23,11 @@ abstract class CrudController extends AbstractActionController{
 		return new ViewModel(
 				array('home' => $list)
 				);
+	}
+	public function thanksAction(){
+			
+		return new ViewModel(
+		);
 	}
 	
 public function addAction(){
@@ -46,7 +52,7 @@ public function addAction(){
 				$dm->flush();
 				//$this->flashMessenger()->addSuccessMessage("Culto criado com sucesso");
 				
-				return $this->redirect()->toRoute($this->route);
+				return $this->redirect()->toRoute($this->routeThanks);
 				}
 				//else					
 					//$this->flashMessenger()->addErrorMessage("Erro ao adicionar culto");

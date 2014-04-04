@@ -9,7 +9,8 @@ class ClientesController extends CrudController{
 		$this->document = 'Clientes\Document\User';
 		$this->service = 'doctrine.documentmanager.odm_default';
 		$this->form = 'Clientes\Form\ClientesForm';
-		$this->route = 'home';
+		$this->routeHome = 'home';
+		$this->routeThanks = 'thanks';
 		//$this->controller = 'CultoController';		
 	}
 	/*

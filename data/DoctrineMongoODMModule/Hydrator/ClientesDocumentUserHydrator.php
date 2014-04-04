@@ -36,19 +36,35 @@ class ClientesDocumentUserHydrator implements HydratorInterface
         }
 
         /** @Field(type="string") */
-        if (isset($data['firstName'])) {
-            $value = $data['firstName'];
+        if (isset($data['nome'])) {
+            $value = $data['nome'];
             $return = (string) $value;
-            $this->class->reflFields['firstName']->setValue($document, $return);
-            $hydratedData['firstName'] = $return;
+            $this->class->reflFields['nome']->setValue($document, $return);
+            $hydratedData['nome'] = $return;
         }
 
         /** @Field(type="string") */
-        if (isset($data['lastName'])) {
-            $value = $data['lastName'];
+        if (isset($data['email'])) {
+            $value = $data['email'];
             $return = (string) $value;
-            $this->class->reflFields['lastName']->setValue($document, $return);
-            $hydratedData['lastName'] = $return;
+            $this->class->reflFields['email']->setValue($document, $return);
+            $hydratedData['email'] = $return;
+        }
+
+        /** @Field(type="string") */
+        if (isset($data['telefone'])) {
+            $value = $data['telefone'];
+            $return = (string) $value;
+            $this->class->reflFields['telefone']->setValue($document, $return);
+            $hydratedData['telefone'] = $return;
+        }
+
+        /** @Field(type="string") */
+        if (isset($data['setor'])) {
+            $value = $data['setor'];
+            $return = (string) $value;
+            $this->class->reflFields['setor']->setValue($document, $return);
+            $hydratedData['setor'] = $return;
         }
         return $hydratedData;
     }

@@ -29,6 +29,16 @@ return array(
                     ),
                 ),
             ),
+        		'thanks' => array(
+        				'type' => 'Zend\Mvc\Router\Http\Literal',
+        				'options' => array(
+        						'route'    => '/obrigado',
+        						'defaults' => array(
+        								'controller' => 'CLientesController',
+        								'action'     => 'thanks',
+        						),
+        				),
+        		),
         		'clientes' => array(
         				'type'      => 'Segment',
         				'options'   => array(

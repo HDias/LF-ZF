@@ -26,32 +26,62 @@ class ClientesForm extends Form{
 		));
 		
 		$this->add(array(
-				'name' => 'firstName',
+				'name' => 'nome',
 				'type' => 'Text',
 				'attributes' => array(
 						'required' => true,
-						'id' => 'firstName',
+						'id' => 'nome',
 						'class' => 'form-control',
 						'placeholder'=> 'Digite aqui...',
 						'maxlength' => '100',
 				),
 				'options' => array(
-						'label' => 'Primeiro Nome: ',
+						'label' => 'Nome: ',
 						),				
 		));
 
 		$this->add(array(
-				'name' => 'lastName',
+				'name' => 'email',
 				'type' => 'Text',
 				'attributes' => array(
 						'required' => true,
-						'id' => 'lastName',
+						'id' => 'email',
 						'class' => 'form-control',
 						'placeholder'=> 'Digite aqui...',
 						'maxlength' => '100',
 				),
 				'options' => array(
-						'label' => 'Sobrenome: ',
+						'label' => 'Email: ',
+				),
+		));
+		
+		$this->add(array(
+				'name' => 'telefone',
+				'type' => 'Text',
+				'attributes' => array(
+						'required' => true,
+						'id' => 'telefone',
+						'class' => 'form-control',
+						'placeholder'=> 'Digite aqui...',
+						'maxlength' => '100',
+				),
+				'options' => array(
+						'label' => 'Telefone: ',
+				),
+		));
+		
+		$this->add(array(
+				'name' => 'setor',
+				'type' => 'Text',
+				'attributes' => array(
+						'required' => true,
+						'id' => 'setor',
+						'class' => 'form-control',
+						'placeholder'=> 'Digite aqui...',
+						'maxlength' => '100',
+				),
+				'options' => array(
+						'label' => 'Setor: ',
 				),
 		));
 

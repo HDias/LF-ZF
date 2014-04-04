@@ -1,54 +1,47 @@
-<?php
+<div class="row clearfix ">
+			<div class="col-md-6 column">
+				<div class="video-container">
+					    <iframe src="//player.vimeo.com/video/90059051?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" 
+						    width="500" 
+						    height="281" 
+						    frameborder="0" 
+						    webkitallowfullscreen 
+						    mozallowfullscreen 
+						    allowfullscreen>
+					    </iframe>
+				</div>
+			</div>
+			<div class="col-md-6 column">
+				<?php 
+					$form = $this->form;
+					$form->setAttribute('action',
+							$this->url('clientes',
+									array(	'controller' => 'ClientesController',
+											'action'=>'add'
+									)));
+					$form->setAttribute('class', 'form-horizontal');
+					$form->prepare();
+				
+					echo $this->form()->openTag($form);
+					
+					echo $this->formHidden($form->get('id')); ?>
+					
+					<div class="form-group">
+						<?php echo $this->formRow($form->get('nome')); ?>
 
-$title = 'Adicionar Novo Cliente';
-$this->headTitle($title);
-?>
-<div
-	class="panel panel-primary">
-	<div class="panel-heading">
-		<div class="panel-title">
-			<?php echo $this->escapeHtml($title); ?>
-		</div>
-	</div>
-	<?php 
-	$form = $this->form;
-	$form->setAttribute('action',
-			$this->url('clientes',
-					array(	'controller' => 'ClientesController',
-							'action'=>'add'
-					)));
-	$form->setAttribute('class', 'form-horizontal');
-	$form->prepare();
-
-	echo $this->form()->openTag($form);
-	
-	echo $this->formHidden($form->get('id')); ?>
-
-	<div class="panel-body">
-		<div class="form-group">
-			<div class="col-lg-9 col-md-9">
-				<?php echo $this->formRow($form->get('firstName')); ?>
+					</div>
+					<div class="form-group">
+						<?php echo $this->formRow($form->get('email')); ?>
+					</div>
+					<div class="form-group">
+						<?php echo $this->formRow($form->get('telefone')); ?>
+					</div>
+					<div class="form-group">
+						<?php echo $this->formRow($form->get('setor')); ?>
+						<p class="help-block">Se não souber o setor pode digitar o
+							endereço.</p>
+					</div>
+					<?php echo $this->formSubmit($form->get('submit')); ?>
+				<?php echo $this->form()->closeTag(); ?>
 			</div>
 		</div>
-
-		<div class="form-group">
-			<div class="col-lg-9 col-md-9">
-				<?php echo $this->formRow($form->get('lastName')); ?>
-			</div>
-		</div>
-
-	<div class="panel-footer">
-		<?php echo $this->formSubmit($form->get('submit')); ?>
-		<a href="<?php echo $this->url('home'); ?>" class="btn btn-default">Voltar</a>
-		
-	</div>
-	
-	<?php echo $this->form()->closeTag(); ?>
-</div>
-
-<?php $this->headScript()->captureStart(); ?>
-jQuery(function($){ $("#fiData").mask("99/99/9999"); });
-
-<?php $this->headScript()->captureEnd(); ?>
-
-
