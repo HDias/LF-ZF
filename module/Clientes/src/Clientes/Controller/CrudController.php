@@ -1,6 +1,8 @@
 <?php
 namespace Clientes\Controller;
 
+use Zend\Session\Container;
+
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -10,6 +12,7 @@ abstract class CrudController extends AbstractActionController{
 
 	protected $dm;
 	protected $document;
+	protected $form;
 	protected $routeHome;
 	protected $routeThanks;
 	protected $controller;
@@ -25,9 +28,15 @@ abstract class CrudController extends AbstractActionController{
 				);
 	}
 	public function thanksAction(){
-			
+		
+		$thanksLF = new Container();
+		
 		return new ViewModel(
-		);
+				array(	
+						'nome' => $thanksLF->nome,
+						)
+				);
+		unset($thanksLF->nome);
 	}
 	
 public function addAction(){
@@ -37,27 +46,28 @@ public function addAction(){
 		
 		$request = $this->getRequest();
 		
-		if ($request->isPost()) {
+		if ($request->isPost()){
 			
 			$form->setData($request->getPost());
 			
 			if ($form->isValid()) {
+				
+				$thanksLF = new Container();
+				$thanksLF->nome = $request->getPost()->toArray()['nome'];
+				
 				$dm = $this->getServiceLocator()->get($this->service);
 				$document = new $this->document();
 								
 				Configurator::configure($document, $request->getPost()->toArray());
-				
+							
 				$dm->persist($document);
-					
 				$dm->flush();
-				//$this->flashMessenger()->addSuccessMessage("Culto criado com sucesso");
-				
-				return $this->redirect()->toRoute($this->routeThanks);
+
+				return $this->redirect()->toRoute($this->routeThanks, array('nome' => 'Horecio'));
 				}
 				//else					
 					//$this->flashMessenger()->addErrorMessage("Erro ao adicionar culto");
 		}			
-		
 		return new ViewModel(
 				array(	'form' => $form,
 				));

@@ -25,7 +25,7 @@ return array(
                     'route'    => '/',
                     'defaults' => array(
                         'controller' => 'CLientesController',
-                        'action'     => 'index',
+                        'action'     => 'add',
                     ),
                 ),
             ),

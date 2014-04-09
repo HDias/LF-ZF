@@ -20,7 +20,7 @@ class User{
     
     /** @ODM\Field(type="string") */
     private $setor;
-
+    
     /**
      * @return the $id
      */
@@ -106,5 +106,4 @@ class User{
     	$this->setor = $setor;
     	return $this;
     }
-
 }

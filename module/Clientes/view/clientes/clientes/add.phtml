@@ -12,6 +12,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 column">
+				<div class="col-md-12 column">
 				<?php 
 					$form = $this->form;
 					$form->setAttribute('action',
@@ -28,7 +29,6 @@
 					
 					<div class="form-group">
 						<?php echo $this->formRow($form->get('nome')); ?>
-
 					</div>
 					<div class="form-group">
 						<?php echo $this->formRow($form->get('email')); ?>
@@ -43,5 +43,9 @@
 					</div>
 					<?php echo $this->formSubmit($form->get('submit')); ?>
 				<?php echo $this->form()->closeTag(); ?>
+				</div>
 			</div>
+			
 		</div>
+		
+		<div id="fb-root"></div>
