@@ -22,6 +22,7 @@ abstract class CrudController extends AbstractActionController{
 		$list = $this->getDm()
 		->getRepository($this->document)
 		->findAll();
+		//print_r($list); exit;
 			
 		return new ViewModel(
 				array('home' => $list)
@@ -51,9 +52,9 @@ public function addAction(){
 			$form->setData($request->getPost());
 			
 			if ($form->isValid()) {
-				
+				$data = $request->getPost()->toArray();
 				$thanksLF = new Container();
-				$thanksLF->nome = $request->getPost()->toArray()['nome'];
+				$thanksLF->nome = $data['nome'];
 				
 				$dm = $this->getServiceLocator()->get($this->service);
 				$document = new $this->document();

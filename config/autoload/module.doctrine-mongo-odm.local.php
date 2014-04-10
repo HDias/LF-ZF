@@ -3,8 +3,10 @@ return array(
     'doctrine' => array(
         'connection' => array(
             'odm_default' => array(
-                'server' => 'localhost',
-                'port' => '27017',
+            		'user' => null,
+            		'password' => null,
+            		'dbname' => 'doctrine',
+            		'options' => array()
             ),
         ),      
     ),
