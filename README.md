@@ -1,4 +1,6 @@
 Aplicação ZF2 + Doctrine + MongoDB 
+Projeto ENCERRADO por não haver hospedagem para aplicação Zend com suporte para MongoDB
+Há somente hospedagem Dedicadas
 =======================
 
 Introduction
